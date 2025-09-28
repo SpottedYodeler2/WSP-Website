@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>World Student Pitch</title>
+        <script
+            src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+            rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet" />
+        <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#0D0D0D",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1A1A1A",
+                        "text-light": "#1F2937",
+                        "text-dark": "#F9FAFB",
+                        "subtext-light": "#6B7280",
+                        "subtext-dark": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        lg: "16px",
+                        xl: "24px"
+                    },
+                    boxShadow: {
+                        'custom-light': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
+                        'custom-dark': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                      }
+                },
+            },
+        };
+    </script>
+        <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, #1A2E28 0%, #0D0D0D 100%);
+        }
+        .carousel-container {
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+    </head>
+
+    <body
+        class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display">
+
+        <!-- Header -->
+        <header
+            class="fixed top-0 left-0 right-0 z-50 bg-background-dark/80 dark:bg-background-dark/80 backdrop-blur-sm">
+            <div
+                class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img
+                        alt="globe icon"
+                        class="inline-block align-baseline"
+                        style="height: 3em; width: 5em;"
+                        src="./assets/WSP.svg" />
+                </div>
+                <nav
+                    class="hidden md:flex items-center space-x-8 justify-start">
+                    <a class="text-gray-300 hover:text-white transition-colors"
+                        href="#about">About WSP</a>
+                    <a class="text-gray-300 hover:text-white transition-colors"
+                        href="#events">Events</a>
+                    <a class="text-gray-300 hover:text-white transition-colors"
+                        href="#stories">Success Stories</a>
+                    <a class="text-gray-300 hover:text-white transition-colors"
+                        href="#contact">Contact Us</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="bg-white/20 text-white px-6 py-2 rounded-full hover:bg-white/30 transition-colors text-sm">
+                        Apply Now
+                    </button>
+                    <div class="text-right leading-tight">
+                        <!-- By YUME PRO -->
+                        <div class="flex items-center justify-end space-x-4">
+                            <span
+                                class="text-gray-300 text-xs md:text-sm hover:text-white transition-colors">Supported
+                                by
+                            </span>
+                            <img
+                                alt="YUME PRO logo"
+                                style="height: 3em; width: 3.7em;"
+                                src="./assets/YUME_PRO.svg" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Top Banner -->
+        <section
+            class="hero-gradient pt-32 pb-20 text-center relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <h1
+                    class="text-5xl md:text-7xl font-black text-white tracking-tighter">
+                    <!-- Top Logo -->
+                    <img
+                        src="./assets/WSP_Only.svg"
+                        alt="WSP Logo"
+                        class="mx-auto mb-6"
+                        style="height: 0.85em; width: auto;" />
+
+                    <!-- Title -->
+                    <div style="text-align: center">
+                        <span
+                            style="color: white; font-size: 96px; font-weight: 900; line-height: 82.56px; word-wrap: break-word; text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)">
+                            W<span class="inline-block relative -top-1">
+                                <img
+                                    alt="globe icon"
+                                    class="inline-block align-baseline"
+                                    style="height: 0.75em; width: 0.8em;"
+                                    src="./assets/Globe.svg" />RLD
+                            </span>
+                            <span
+                                style="color: white; font-size: 96px; font-weight: 900; line-height: 82.56px; word-wrap: break-word; text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)">
+                                STUDENT PITCH
+                            </span>
+                        </span>
+                    </div>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-300">Japan's
+                    biggest
+                    and most prestigious student entrepreneurship event.</p>
+                <div class="mt-6 flex justify-center items-center">
+                    <div
+                        class="h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent w-full max-w-lg"></div>
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-black/20 z-0"></div>
+            <div
+                class="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-white/5 rounded-full opacity-10"></div>
+        </section>
+
+        <!-- Body -->
+        <main
+            class="container mx-auto px-6 py-16 sm:py-24 space-y-24 sm:space-y-32">
+            <section class="scroll-mt-24" id="about">
+                <div class="grid md:grid-cols-2 gap-12 items-top">
+                    <div>
+                        <span
+                            class="inline-block bg-gray-700 text-white text-xs font-semibold px-3 py-1 rounded mb-4">
+                            About WSP
+                        </span>
+                        <h2
+                            class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">Empowering
+                            the Next Generation of Entrepreneurs</h2>
+                        <p
+                            class="mt-4 text-lg text-subtext-light dark:text-subtext-dark">World
+                            Student Pitch (WSP) is the premier platform for
+                            the
+                            brightest young minds to showcase their
+                            innovative
+                            business ideas. We connect student entrepreneurs
+                            with mentors, investors, and a global community
+                            to
+                            help turn their visions into reality. </p>
+                        <p
+                            class="mt-4 text-subtext-light dark:text-subtext-dark">Our
+                            mission is to foster the next generation of
+                            leaders
+                            and innovators by providing them with the
+                            resources
+                            and network necessary for success. Join us in
+                            building the future, one pitch at a time.</p>
+                        <!-- Stats -->
+                        <div class="grid grid-cols-3 mt-8">
+                            <div class="text-start">
+                                <div
+                                    class="text-3xl font-bold text-white mb-2">500+</div>
+                                <div
+                                    class="text-gray-400">Participants</div>
+                            </div>
+                            <div class="text-start">
+                                <div
+                                    class="text-3xl font-bold text-white mb-2">50+</div>
+                                <div
+                                    class="text-gray-400">Universities</div>
+                            </div>
+                            <div class="text-start">
+                                <div
+                                    class="text-3xl font-bold text-white mb-2">¥10M+</div>
+                                <div class="text-gray-400">Total
+                                    Prizes</div>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-8 bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity flex items-center space-x-2">
+                            <span>Learn More</span>
+                            <span
+                                class="material-icons">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Right Content: Image Gallery -->
+                    <div class="relative">
+                        <div class="overflow-hidden rounded-lg shadow-lg">
+                            <img id="gallery-image"
+                                src="./assets/images/highlights/H1.JPG"
+                                alt="Gallery Image"
+                                class="w-full object-cover transition duration-500" />
+                        </div>
+
+
+                        <!-- Controls -->
+                        <div
+                            class="absolute inset-0 flex items-center justify-between px-4">
+                            <button onclick="prevImage()"
+                                class="bg-black/50 text-white p-2 rounded-full hover:bg-black/70">
+                                ‹
+                            </button>
+                            <button onclick="nextImage()"
+                                class="bg-black/50 text-white p-2 rounded-full hover:bg-black/70">
+                                ›
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="history">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">History
+                        of WSP</h2>
+                    <p
+                        class="mt-3 max-w-2xl mx-auto text-lg text-subtext-light dark:text-subtext-dark">From
+                        a small local contest to a global phenomenon, trace the
+                        journey of WSP.</p>
+                </div>
+                <div class="carousel-container" x-data="{
+                            activeSlide: 0,
+                            slides: [
+                                { year: '2018',
+                                  title: 'The Genesis', 
+                                  description: 'WSP started as a small university-wide competition in Tokyo, with 20 teams participating. The goal was simple: to give students a platform to voice their ideas.', 
+                                  images: [
+                                  './assets/images/highlights/H1.jpg',
+                                  './assets/images/highlights/H2.jpg',
+                                  './assets/images/highlights/H3.jpg',] },
+                                { year: '2018', 
+                                title: 'The Genesis', 
+                                description: 'WSP started as a small university-wide competition in Tokyo, with 20 teams participating. The goal was simple: to give students a platform to voice their ideas.', 
+                                images: [
+                                './assets/images/highlights/H1.jpg',
+                                './assets/images/highlights/H2.jpg',
+                                './assets/images/highlights/H3.jpg',] },
+                                { year: '2018', 
+                                title: 'The Genesis', 
+                                description: 'WSP started as a small university-wide competition in Tokyo, with 20 teams participating. The goal was simple: to give students a platform to voice their ideas.', 
+                                images: [
+                                './assets/images/highlights/H1.jpg',
+                                './assets/images/highlights/H2.jpg',
+                                './assets/images/highlights/H3.jpg',] },
+                                { year: '2018', 
+                                title: 'The Genesis', 
+                                description: 'WSP started as a small university-wide competition in Tokyo, with 20 teams participating. The goal was simple: to give students a platform to voice their ideas.', 
+                                images: [
+                                './assets/images/highlights/H1.jpg',
+                                './assets/images/highlights/H2.jpg',
+                                './assets/images/highlights/H3.jpg',] },
+                                { year: '2018', 
+                                title: 'The Genesis', 
+                                description: 'WSP started as a small university-wide competition in Tokyo, with 20 teams participating. The goal was simple: to give students a platform to voice their ideas.', 
+                                images: [
+                                './assets/images/highlights/H1.jpg',
+                                './assets/images/highlights/H2.jpg',
+                                './assets/images/highlights/H3.jpg',] },
+                            ],
+                            next() { this.activeSlide = (this.activeSlide + 1) % this.slides.length },
+                            prev() { this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length }
+                        }">
+                    <div class="relative">
+                        <div
+                            :style="{ 'transform': `translateX(-${activeSlide * 100}%)` }"
+                            class="carousel-track">
+                            <template :key="index"
+                                x-for="(slide, index) in slides">
+                                <div class="carousel-slide px-4">
+                                    <div
+                                        class="bg-card-light dark:bg-card-dark p-8 md:p-12 rounded-xl shadow-custom-light dark:shadow-custom-dark">
+                                        <div
+                                            class="flex flex-col lg:flex-row items-start gap-8">
+                                            <div
+                                                class="text-center md:text-left lg:w-1/4">
+                                                <p
+                                                    class="text-6xl md:text-8xl font-black text-primary"
+                                                    x-text="slide.year"></p>
+                                                <h3
+                                                    class="text-2xl font-bold text-text-light dark:text-text-dark mt-2"
+                                                    x-text="slide.title"></h3>
+                                                <p
+                                                    class="mt-2 text-subtext-light dark:text-subtext-dark"
+                                                    x-text="slide.description"></p>
+                                            </div>
+                                            <div class="lg:w-3/4 w-full">
+                                                <div
+                                                    class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                                    <div class="grid gap-4">
+                                                        <img
+                                                            :src="slide.images[0]"
+                                                            alt="WSP History Image"
+                                                            class="h-auto max-w-full rounded-lg object-cover w-full aspect-[4/3]" />
+                                                    </div>
+                                                    <div class="grid gap-4">
+                                                        <img
+                                                            :src="slide.images[1]"
+                                                            alt="WSP History Image"
+                                                            class="h-auto max-w-full rounded-lg object-cover w-full aspect-[4/3]" />
+                                                    </div>
+                                                    <div class="grid gap-4">
+                                                        <img
+                                                            :src="slide.images[2]"
+                                                            alt="WSP History Image"
+                                                            class="h-auto max-w-full rounded-lg object-cover w-full aspect-[4/3]" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <button @click="prev()"
+                            class="absolute top-1/2 -translate-y-1/2 left-0 md:-left-6 bg-card-light dark:bg-card-dark rounded-full p-2 shadow-custom-light dark:shadow-custom-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                            <span
+                                class="material-icons text-text-light dark:text-text-dark">chevron_left</span>
+                        </button>
+                        <button @click="next()"
+                            class="absolute top-1/2 -translate-y-1/2 right-0 md:-right-6 bg-card-light dark:bg-card-dark rounded-full p-2 shadow-custom-light dark:shadow-custom-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                            <span
+                                class="material-icons text-text-light dark:text-text-dark">chevron_right</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-center mt-6 space-x-2">
+                        <template :key="index" x-for="(slide, index) in slides">
+                            <button
+                                :class="{ 'bg-primary': activeSlide === index, 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500': activeSlide !== index }"
+                                @click="activeSlide = index"
+                                class="w-3 h-3 rounded-full transition-colors"></button>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why participate?  -->
+            <section id="why">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">Why
+                        Participate in WSP?</h2>
+                    <p
+                        class="mt-3 max-w-2xl mx-auto text-lg text-subtext-light dark:text-subtext-dark">Unlock
+                        opportunities, gain invaluable experience, and
+                        connect
+                        with industry leaders.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark">
+                        <div
+                            class="bg-primary/10 text-primary h-12 w-12 rounded-lg flex items-center justify-center">
+                            <span class="material-icons">groups</span>
+                        </div>
+                        <h3
+                            class="mt-6 text-xl font-semibold text-text-light dark:text-text-dark">Global
+                            Network</h3>
+                        <p
+                            class="mt-2 text-subtext-light dark:text-subtext-dark">Connect
+                            with a diverse community of students, mentors,
+                            and
+                            investors from around the world.</p>
+                    </div>
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark">
+                        <div
+                            class="bg-primary/10 text-primary h-12 w-12 rounded-lg flex items-center justify-center">
+                            <span class="material-icons">school</span>
+                        </div>
+                        <h3
+                            class="mt-6 text-xl font-semibold text-text-light dark:text-text-dark">Expert
+                            Mentorship</h3>
+                        <p
+                            class="mt-2 text-subtext-light dark:text-subtext-dark">Receive
+                            one-on-one guidance from seasoned entrepreneurs
+                            and
+                            industry experts.</p>
+                    </div>
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark">
+                        <div
+                            class="bg-primary/10 text-primary h-12 w-12 rounded-lg flex items-center justify-center">
+                            <span class="material-icons">paid</span>
+                        </div>
+                        <h3
+                            class="mt-6 text-xl font-semibold text-text-light dark:text-text-dark">Funding
+                            Opportunities</h3>
+                        <p
+                            class="mt-2 text-subtext-light dark:text-subtext-dark">Pitch
+                            your idea to a panel of venture capitalists and
+                            angel investors for potential funding.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="scroll-mt-24" id="events">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">Events</h2>
+                    <p
+                        class="mt-3 max-w-2xl mx-auto text-lg text-subtext-light dark:text-subtext-dark">Stay
+                        tuned for our upcoming events and look back at our
+                        memorable past competitions.</p>
+                </div>
+                <div>
+                    <h3
+                        class="text-2xl font-semibold mb-6 text-text-light dark:text-text-dark">Upcoming
+                        Events</h3>
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark flex flex-col md:flex-row items-center gap-8">
+                        <img alt="WSP Global Finals 2024 promotional image"
+                            class="w-full md:w-1/3 h-auto object-cover rounded-lg"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0TogHMwOOQi9K9Xnqo1T9mepWboZPdB29TgIMN6AOH8IiCwfS36077_O9RPXicmy8gjdJTi86XTicgRSBVJM97ktaJVHi-tpVM8tuAsDhP_97eWl2qhGRL9l8SO7aXKX3H1h9o9fyavp-hhbE-InSoVM88l6dp-harTXHdrvT2h-JDlIlxpV6-S6MBbdzRmSbDjnFjJvzmUumb7L5fnecS-TfwGgJ3226k3I6D7L0R6d5AMdeNhjxoBeRBuO7Gl0HuOcW3w2edWwY" />
+                        <div class="flex-1">
+                            <p class="text-primary font-semibold">October
+                                25-27,
+                                2024 • Tokyo, Japan</p>
+                            <h4
+                                class="text-2xl font-bold my-2 text-text-light dark:text-text-dark">WSP
+                                Global Finals 2024</h4>
+                            <p
+                                class="text-subtext-light dark:text-subtext-dark">The
+                                culmination of a year of innovation. The
+                                world's
+                                best student teams compete for the grand
+                                prize.
+                                Join us for three days of pitches,
+                                workshops,
+                                and networking.</p>
+                            <button
+                                class="mt-6 bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">Register
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <h3
+                        class="text-2xl font-semibold mb-6 text-text-light dark:text-text-dark">Past
+                        Events</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-custom-light dark:shadow-custom-dark">
+                            <p
+                                class="text-subtext-light dark:text-subtext-dark">May
+                                15, 2023</p>
+                            <h4
+                                class="text-xl font-semibold my-2 text-text-light dark:text-text-dark">WSP
+                                Asia Regional Finals</h4>
+                            <p
+                                class="text-subtext-light dark:text-subtext-dark">Top
+                                teams from across Asia competed for a spot
+                                in
+                                the Global Finals.</p>
+                        </div>
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-custom-light dark:shadow-custom-dark">
+                            <p
+                                class="text-subtext-light dark:text-subtext-dark">March
+                                10, 2023</p>
+                            <h4
+                                class="text-xl font-semibold my-2 text-text-light dark:text-text-dark">WSP
+                                Europe Semi-Finals</h4>
+                            <p
+                                class="text-subtext-light dark:text-subtext-dark">An
+                                exciting online event showcasing Europe's
+                                most
+                                promising student startups.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="scroll-mt-24" id="stories">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">Success
+                        Stories</h2>
+                    <p
+                        class="mt-3 max-w-2xl mx-auto text-lg text-subtext-light dark:text-subtext-dark">Meet
+                        the alumni who turned their WSP experience into
+                        real-world success.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark flex flex-col items-center text-center">
+                        <img alt="Portrait of Yuna Kim"
+                            class="w-24 h-24 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDByB5Zy56sNNNcTk4GJdYjAz0ALJGDiEBryZLlfDJUGnb4klauJBc78rVLNOToz2nQaZ7E2CfOBIosR6KfFC8QSeFx5Xnfqe2UtgkCz5dFzAWz12gQXEZm-M9puriY9ZJDMjGM6OpvcBwYVyQm4Vxgrf71HjkOS-pyBPraKCV1dE5T5EzAiEOXtc7he3HfgjiTLyh51x3o9kTf5SW58IRmtYw4GlA0Ye45oQ3qbQ4GaOiuYJ9Nd9lPUZmd-RgBmLcCKa85cbfFNtqW" />
+                        <p
+                            class="mt-6 text-lg text-subtext-light dark:text-subtext-dark">"WSP was a game-changer. The mentorship I received was instrumental in securing our first round of funding for EcoSort, a waste management AI."</p>
+                        <div
+                            class="mt-4 font-semibold text-text-light dark:text-text-dark">
+                            <p>Yuna Kim, CEO of EcoSort</p>
+                            <p class="text-sm text-primary">WSP 2022
+                                Winner</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark flex flex-col items-center text-center">
+                        <img alt="Portrait of Carlos Gomez"
+                            class="w-24 h-24 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbx2ur1hc0RimK69BjxItgpJJN05LQh5H4f7BqHqgpDndNblNGobopVLdV2OtD5OLe-8QfOLUu5Le87mMY0T1MG-l94X5zqZhxoPe1xxBTwgy1bacaTxogBWrBSyNUSxq8iosMWBOklyV_i47Pr7nhRUCto7SOUyzDB1UrXTqjJ7125pfdXWGiSxqF1xtpZUv3qMa0_0l0IiVY45xK_n9jefdo8_uQUwPn7HUxj8MmMyOp0T3T_O957bF3x8ZIFGphKruvpVr1Ur6v" />
+                        <p
+                            class="mt-6 text-lg text-subtext-light dark:text-subtext-dark">"The connections we made at WSP were invaluable. We met our co-founder and lead investor at the Global Finals."</p>
+                        <div
+                            class="mt-4 font-semibold text-text-light dark:text-text-dark">
+                            <p>Carlos Gomez, Co-founder of MedLink</p>
+                            <p class="text-sm text-primary">WSP 2021
+                                Finalist</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="gallery">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">Gallery</h2>
+                    <p
+                        class="mt-3 max-w-2xl mx-auto text-lg text-subtext-light dark:text-subtext-dark">Capturing
+                        the energy and excitement of WSP events.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid gap-4">
+                        <div><img alt="Students presenting on a stage"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcNM29VkLvdphpWxTyhXHf4oAcvYA2uqMBfLVQVfJ0jGlBJnMFkY0LDS9Ci9wUCUDfbEX1TEwM8hIhBUFTz1dXh5X8DWnR0hMPxjJlBbf9Dc0XZFEISxPTVEjuv7AyDcqDOf9G9JAMZ_ez4JaNjApF3G_yBXJ780EeAD3rESpRWrqwLTc2_-n9hZZQeWwHXHeHg1CKU3P2Dvdvjyok5xEW-At0dpIDoCGtiyHFlEYtkEIUA2DDql55L-OdHnFEWHOGrdLY9YaP31eO" /></div>
+                        <div><img alt="A crowded conference hall"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD26_yyLt1MU8ZHIpbcASOZtj30ALEeffgm2BPg8xam8tJh5EMkbvWNqa1npMFEKElgVg0T_j3vulOg1bLQzM3na8tNIPyE1y2cyhPiCwPbilfeVnjiMfYxWN84-8QMQd3keP4kj5y65tVamyy5x8cDG5kAXviCpwlYmAxqG4LshzhBszArRFQP0leYin7tLI1YRF9u_GmjXmiTviKxckOGcDQpvlCPa4HH_rABFw2ASdUnx86b_RLY82kCZz26S2mFLkH1j0A69Uqu" /></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img
+                                alt="Close-up of a student pitching an idea"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc8V70K0q3uaLsO9JFdpQobhh340EjOa9QjG9EC63mdHZXgegGVaF9N5EMPj97mbx96bgpqkWhrT0x407BIIyY4hTp8AjHdgihhqyRpOptDMXC37UYLf9punoNISZClEdE_ikK6DBAqgZgNiBpQn0J9AJi9497RqKFCchckbEhEfhuBO2Ndc-tN-VGFEkn8_S1bRuE2uMNwmdW4nWLF1TL3nZXz0PLHTp0i7930wvBzYHgrqi2UvTQ1tZz1BZ9EECoGL_jvARfTvmM" /></div>
+                        <div><img
+                                alt="Networking session with students and investors"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx9trdfUket1AT_56AIT8tJtcrt0zugyQEmGXBjlyl7d1b3_MBkey2IwOLzTpxoEsTqS9SjIa8_zT0zl7jVbluwlWA9rf5GPx9RZvT8rXjjLcEa8htJnD_KNertGYhJ7-eaPdj-eon4V1wA3KHlJURJj3p3UG1_ScShXhEolycCatTYSFD8Z_BVl9envEIqw8im8RS-srY1a9IPycO0joddZkhHCYtJhDG_uPlMtPW3TO0W5w7H-b0L1O-s3_8XgG6_a-yIwM0kpQk" /></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img
+                                alt="A team of students celebrating their win"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcNM29VkLvdphpWxTyhXHf4oAcvYA2uqMBfLVQVfJ0jGlBJnMFkY0LDS9Ci9wUCUDfbEX1TEwM8hIhBUFTz1dXh5X8DWnR0hMPxjJlBbf9Dc0XZFEISxPTVEjuv7AyDcqDOf9G9JAMZ_ez4JaNjApF3G_yBXJ780EeAD3rESpRWrqwLTc2_-n9hZZQeWwHXHeHg1CKU3P2Dvdvjyok5xEW-At0dpIDoCGtiyHFlEYtkEIUA2DDql55L-OdHnFEWHOGrdLY9YaP31eO" /></div>
+                        <div><img alt="Judges listening intently to a pitch"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbk5AVgzfE2I3ud-xu4PdSTQSwy7ucyl5zDRHGg9KHFP4QliPTY_X9bcVJiOiHVLCXCV2sRPlJ4y0ZbgVxJU1qsk3p64XdnWaxDEptMAQP_WNX1yuEot-d-OGY7IMwk9C1wjkK0aXGg_Tj_o0v92BY3apCgQS2GInd4nl8J6mCAqwqW4D_ayvd7DYSIcW38UmEw7QGuAJS43zdLddv9GEJcleLwDDh2b-Zh34xL3FAJxtJFu9QADHEpEWyqfC9J9kE3Bfj9-fewU36" /></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img alt="Workshop session with a mentor"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPA5xFB99Vf5kRhh7lEK4-odYEbP50A7NXENncF-HMTyXY_YDJSHk1Xr05OTCBqKq6xKdDvGc-zvH4UiBLpO0oO8jFkcCf17uysUyBeLIbw1G03MMFcT-OyYLwJ_oPoJMqTPF9c4euv1IzBBNiNAxIFoonJECR0NbVNmp0zxiXARZNf59HiqjrOVTbTNcgfzdTNtE9eqCTSbgI2XGC5ogdzYp2w8GDNGcrsabWStH6YpBqIMJTn2jbEy5LvpwE4k2fS2w7i1QtHrJ" /></div>
+                        <div><img alt="Finalists group photo on stage"
+                                class="h-auto max-w-full rounded-lg"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7E5-WQAtV5yIlA4avm1bGOcT4cc_jpN6z-zi4IR-RBNAByXO9N29-YjQndj7oS9uIEKaTCts4X4C9uv0BU6OWtiE2PshTR1aj2zbM13QaYVazTaS0SHXB2IptGGUJKBMV3uCUzyYockFH_Yju5mB7NirlcHqbUqqPbF7OLy_EJPc-MPlWRig13hMnsEl9P-MUqk3U8PrGySXeC5x3diAaXD1GWga1r-ntBXvn1qh4I1AvTRbpNlEe17imaVvCyTEVXNmpB68r0w8Y" /></div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="bg-primary text-white rounded-xl p-12 text-center">
+                <h2
+                    class="text-3xl sm:text-4xl font-bold tracking-tight">Ready
+                    to Pitch Your Idea?</h2>
+                <p class="mt-4 text-lg max-w-2xl mx-auto">Applications for
+                    the
+                    next WSP cycle are now open. Don't miss your chance to
+                    be
+                    part of Japan's biggest student entrepreneurship
+                    event.</p>
+                <button
+                    class="mt-8 bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors">Apply
+                    Now</button>
+            </section>
+            <section>
+                <h2
+                    class="text-center text-2xl font-semibold text-subtext-light dark:text-subtext-dark mb-8">Our
+                    Valued Sponsors</h2>
+                <div
+                    class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                    <img alt="Innovate Corp logo"
+                        class="h-10 opacity-60 hover:opacity-100 transition-opacity"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAXa84AYp3U8PDialXZHbwS6w1IUmoGdiirN8IuUbz2zMBfljrP7YZk_HxdkLjvI6cx8E-UhclGpKLKBvc3o76XrzcY8qKox-vU5o-SAY3EcLtLcaF-rYaTUOL4wZ2SvRARt6t27ruEV07tUrTJkMw6GOS1lnDZZWbC7fkZ4MLPQCTzeWviUwWrcnFuzZiKCkJTm_aTM09iVTL7mPtz-4_JnP3kTE5hYXy6F74RlkLTJo_CnTCCpVanSeMOc3z2M6MDRHGTeRkqBWC" />
+                    <img alt="Future Ventures logo"
+                        class="h-12 opacity-60 hover:opacity-100 transition-opacity"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMZ5DjyrdHWZWQ9Z_tW3BX6SH1vMmdElZsfSQyZsFYOBxYjsrRLCtoRnDy7M7MzVe_zczafSEeQeIuUAq7SRUoTeoXcDhhQfzamEaD55V88rYvBiTL5lHxK72Yx2Uumdg5VRSqJJ0RhsXiF_ejXZY4JGfHG-WZpuXMh8LNyz4odQugcbpT16u13moD5-B-TpclzLdvulgCjoYsKWxLPNXO3FbkRTzGLELHWPyPoXFeARspqboj26VOsxIdYy92ijZsWqzCBukQR7np" />
+                    <img alt="Tech Solutions logo"
+                        class="h-8 opacity-60 hover:opacity-100 transition-opacity"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLsCD3t6qQ6hH50ahYLpc01EzkIgztkxFxHplV5c__CNxZYAWET-XbfWMm9mkk5NGfuc8J33AhmbdT0KA5fuf9EjevRMqLJhyGvw-0RVxYDfpYliMfVriiOioYAupeybAitLOiK2p2DvvRlqsfBG9ssUHjyiC4qEGp1OJJpbo_jt4VaKgj0-pXf80MnTxWle8MsHjzS3WcUrucVZef_LFo8TWC9mgvXXm_FsaPNO5LRHMKtKF5Dhr7MMFqZsqubMlSCWFEB30TqT3R" />
+                    <img alt="Global Bank logo"
+                        class="h-10 opacity-60 hover:opacity-100 transition-opacity"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVymk9HRh4VsUWUevTohO2noDz1RqSzrNicTv_g-OXPicNp0zdpwzWtkocVvTeg9785ZDXeH1474MtkyzySnSH7bzg-FH2mA37sMpbggkBrzWlHVUSngRdxzRcriaOtCfNdGgkHhHm5pOTIPBvwjmNVCB1Pdbd3-xCttgIxrXa-z52wR2aA9B1KreaY-xtW6_Oiu7gxt7iVvo8Jl0VqwgFia-KJLzf_i9ROPnteyZZ-5H6ytr_TkhrkL6abnLDq4R1rfilSby4YUZo" />
+                    <img alt="Edison Foundation logo"
+                        class="h-12 opacity-60 hover:opacity-100 transition-opacity"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOOpiF9riPfAlisAnfANF20sbXxlHupaM9A_0le-XiMtqpY8Qg9noL-DxZ2yR2Wq2nuB66-UzkejrFwxqL6tEDkdiIAi8KKJbKXlkgEhqyFayqZLWiNHxousZnRenucoHDygIMVYco2CXn6KKEIHlKGTMTUHUrDmgTB18AzcpzLuHs2MQGcxch88rm62ZFoou6NvNRNk6CNmi5EiRkGjPk-FMw74enRbr22PBIO8b12VkmEu-KE6Awx_EMexq6stokFwYYDrUFIyak" />
+                </div>
+            </section>
+            <section class="scroll-mt-24" id="contact">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2
+                            class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">Get
+                            In Touch</h2>
+                        <p
+                            class="mt-3 text-lg text-subtext-light dark:text-subtext-dark">Have
+                            questions about WSP, partnerships, or media
+                            inquiries? We'd love to hear from you.</p>
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <span
+                                    class="material-icons text-primary">email</span>
+                                <span
+                                    class="text-subtext-light dark:text-subtext-dark">contact@wsp-global.org</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span
+                                    class="material-icons text-primary">phone</span>
+                                <span
+                                    class="text-subtext-light dark:text-subtext-dark">+81
+                                    3-1234-5678</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span
+                                    class="material-icons text-primary">location_on</span>
+                                <span
+                                    class="text-subtext-light dark:text-subtext-dark">Shibuya,
+                                    Tokyo, Japan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="space-y-6">
+                        <div>
+                            <label
+                                class="block text-sm font-medium text-subtext-light dark:text-subtext-dark"
+                                for="name">Full Name</label>
+                            <input
+                                class="mt-1 block w-full bg-card-light dark:bg-card-dark border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+                                id="name" name="name" type="text" />
+                        </div>
+                        <div>
+                            <label
+                                class="block text-sm font-medium text-subtext-light dark:text-subtext-dark"
+                                for="email">Email Address</label>
+                            <input
+                                class="mt-1 block w-full bg-card-light dark:bg-card-dark border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+                                id="email" name="email" type="email" />
+                        </div>
+                        <div>
+                            <label
+                                class="block text-sm font-medium text-subtext-light dark:text-subtext-dark"
+                                for="message">Message</label>
+                            <textarea
+                                class="mt-1 block w-full bg-card-light dark:bg-card-dark border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+                                id="message" name="message"
+                                rows="4"></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity"
+                            type="submit">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-card-light dark:bg-card-dark">
+            <div class="container mx-auto px-6 py-8">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <span
+                            class="text-text-light dark:text-text-dark font-bold text-xl">WSP</span>
+                        <span
+                            class="text-subtext-light dark:text-subtext-dark text-sm">WORLD
+                            STUDENT PITCH</span>
+                    </div>
+                    <div class="flex mt-4 md:mt-0 space-x-6">
+                        <a
+                            class="text-subtext-light dark:text-subtext-dark hover:text-primary"
+                            href="#">Facebook</a>
+                        <a
+                            class="text-subtext-light dark:text-subtext-dark hover:text-primary"
+                            href="#">Twitter</a>
+                        <a
+                            class="text-subtext-light dark:text-subtext-dark hover:text-primary"
+                            href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div
+                    class="mt-8 border-t border-gray-200 dark:border-gray-700 pt-8 text-center text-subtext-light dark:text-subtext-dark text-sm">
+                    <p>© 2024 World Student Pitch. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="./js/gallery.js"></script>
+        <script defer
+            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </body></html>
