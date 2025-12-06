@@ -6,11 +6,20 @@ const images = [
 
 let currentIndex = 0;
 let intervalId = null;
+// Cache the DOM element once so we don't search for it every click
+const galleryImage = document.getElementById("gallery-image");
+
+// 1. PRELOADER FUNCTION: Downloads all images silently in the background
+function preloadImages() {
+    images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+    });
+}
 
 function showImage(index) {
-  const img = document.getElementById("gallery-image");
-  if (img) {
-    img.src = images[index];
+  if (galleryImage) {
+    galleryImage.src = images[index];
   }
 }
 
@@ -24,29 +33,30 @@ function prevImage() {
   showImage(currentIndex);
 }
 
-// Auto-slide every 5 seconds
 function startAutoSlide() {
+  // Prevent multiple intervals running at once
+  if (intervalId) clearInterval(intervalId);
   intervalId = setInterval(nextImage, 5000);
 }
 
-// Optional: Stop auto-slide when hovering
 function stopAutoSlide() {
-  clearInterval(intervalId);
+  if (intervalId) clearInterval(intervalId);
 }
 
-// Start once the page is loaded
-window.onload = function () {
-  showImage(currentIndex);
+// 2. IMMEDIATE EXECUTION: Start preloading right away
+preloadImages();
+
+// 3. FASTER EVENT LISTENER: Use DOMContentLoaded (fires sooner than window.onload)
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize controls
   startAutoSlide();
 
-  // Optional: pause on hover
-  const gallery = document.getElementById("gallery-image");
-  if (gallery) {
-    gallery.addEventListener("mouseenter", stopAutoSlide);
-    gallery.addEventListener("mouseleave", startAutoSlide);
+  // Add hover listeners
+  if (galleryImage) {
+    galleryImage.addEventListener("mouseenter", stopAutoSlide);
+    galleryImage.addEventListener("mouseleave", startAutoSlide);
   }
-};
-
+});
 
 function historyCarousel() {
   return {
