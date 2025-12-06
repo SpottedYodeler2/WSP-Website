@@ -1,3 +1,9 @@
+html {
+    /* Default is usually 16px. 
+       90% of 16px is 14.4px. */
+    font-size: 12px; 
+}
+
 .card-container {
     display: flex; /* Use flexbox to arrange the two columns */
     background-color: #121212; /* Dark background color */
@@ -82,4 +88,16 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+body {
+    /* Scale down to 90% */
+    transform: scale(0.8);
+    /* Anchor the scaling to the top center */
+    transform-origin: top center; 
+    /* Force the body to be wider so it still fills the screen after shrinking. 
+       Calculation: 100% / 0.9 = 111.11% */
+    width: 111.11%; 
+    /* Prevent horizontal scrollbars caused by the increased width */
+    overflow-x: hidden; 
 }
