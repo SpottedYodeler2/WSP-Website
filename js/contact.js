@@ -35,7 +35,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
             Swal.fire({
                 icon: 'success',
                 title: 'Message Sent!',
-                text: 'I will get back to you as soon as possible.',
+                text: 'We will get back to you as soon as possible.',
                 confirmButtonColor: '#3085d6'
             });
 
