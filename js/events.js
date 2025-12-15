@@ -14,7 +14,7 @@ function createEventCard(event) {
     if (event.prize) {
         const prize = `
             <div class="flex items-center px-8 py-2 rounded-xl bg-amber-50 dark:bg-gray-800 border border-amber-200 dark:border-amber-700/50 shadow-sm">
-                <span class="text-3xl mr-3">🏆</span>
+                <span class="text-2xl mr-3">🏆</span>
                 <div class="flex flex-col">
                     <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">Grand Prize</span>
                     <span class="text-xl font-extrabold text-gray-900 dark:text-white">${event.prize}</span>
@@ -36,8 +36,14 @@ function createEventCard(event) {
 
     // Sponsors
     card.querySelector(".sponsors-list").innerHTML = event.sponsors
-        .map(s => `<img src="${s}" class="h-12 object-contain" />`)
-        .join("");
+        .map(s => `
+        <img 
+            src="${s}" 
+            alt="Sponsor" 
+            class="h-20 w-auto object-contain bg-white rounded-md p-2 shadow-sm" 
+        />
+    `)
+    .join("");
 
     return card;
 }
@@ -45,28 +51,29 @@ function createEventCard(event) {
 // EVENT DATA
 const eventsData = [
     {
-        image: "./assets/images/highlights/event_pic.png",
-        date: "October 25–27, 2024 • Tokyo, Japan",
-        title: "WSP Global Finals 2024",
-        description: "The world's top student startup teams compete for the grand title. Three days of pitching, workshops, judging, and networking.",
-        register: "https://yume.dt-solution.com/",
-        prize: "$50,000",
+        image: "./assets/images/highlights/WSP2026-Icon.png",
+        date: "Tokyo, Japan",
+        title: "WSP Global Finals 2026",
+        description: "The world's top student startup teams compete for the grand title. An exciting event of pitching, judging, and networking. Who will take the spot?",
+        register: "",
+        prize: "3,000,000 JPY",
 
         judges: [
-            { image: "./assets/images/events/PH/Donn Gamboa.png", name: "John Carter", role: "VC Partner" },
-            { image: "./assets/images/events/PH/Jay.png", name: "Aisha Tan", role: "Tech CEO" },
-            { image: "./assets/images/events/PH/Rico.png", name: "Mark Velasquez", role: "Innovation Lead" },
-            { image: "./assets/images/events/PH/Yes.png", name: "Mark Velasquez", role: "Innovation Lead" }
+            { image: "./assets/images/events/WSP2026Finals/Judges/Judge-Sil1.png", name: "", role: "" },
+            { image: "./assets/images/events/WSP2026Finals/Judges/Judge-Sil2.png", name: "", role: "" },
+            { image: "./assets/images/events/WSP2026Finals/Judges/Judge-Sil3.png", name: "", role: "" },
         ],
 
         sponsors: [
-            "./assets/images/events/PH/Blinc.png",
-            "./assets/images/events/PH/FLP.png",
-            "./assets/images/events/PH/ETX.png",
-            "./assets/images/events/PH/LG.png",
-            "./assets/images/events/PH/WC.png"
+            "./assets/images/events/WSP2026Finals/CREDO.png",
+            "./assets/images/events/WSP2026Finals/ANSPA.jpeg",
+            "./assets/images/events/WSP2026Finals/BILLBOARDLIVE.jpeg",
+            "./assets/images/events/WSP2026Finals/SAMU.jpeg",
+
         ]
     },
+
+    // Populate by copying above section
 
 ];
 
@@ -109,24 +116,38 @@ nextBtn.addEventListener("click", () => {
 
 // PAST EVENT COMPONENT GENERATOR ------------------------------------------
 const pastEventsData = [
-  {
-    image: "./assets/images/2025/2025-1.png",
-    date: "May 15, 2023",
-    title: "WSP Asia Regional Finals",
-    description: "Teams from across Asia competed for a spot in the Global Finals.",
-    link: "#" 
-  },
-  {
-    image: "./assets/images/2025/2025-2.png",
-    date: "March 10, 2023",
-    title: "WSP Europe Semi-Finals",
-    description: "Online event showcasing Europe’s most promising student startups.",
-    link: "#"
-  }
+    {
+        image: "./assets/images/events/pastEvents/SingaporeWSP.jpeg",
+        date: "April 19, 2025",
+        title: "WSP Singapore",
+        description: "Asia-Europe Foundation (ASEF)",
+        link: "#"
+    },
+    {
+        image: "./assets/images/events/pastEvents/IndonesiaWSP.jpeg",
+        date: "April 21, 2025",
+        title: "WSP Indonesia",
+        description: "Kijang Function Chamber",
+        link: "#"
+    },
+    {
+        image: "./assets/images/events/pastEvents/KoreaWSP.jpeg",
+        date: "May 24, 2025",
+        title: "WSP Korea",
+        description: "Desker Basecamp with Nonce",
+        link: "#"
+    },
+    {
+        image: "./assets/images/events/pastEvents/PhilippinesWSP.jpg",
+        date: "August 16, 2025",
+        title: "WSP Philippines",
+        description: "Launchgarage Innovation Hub",
+        link: "https://www.facebook.com/WSPPHL/"
+    }
 ];
 
 const createPastEventCard = (event) => {
-  return `
+    return `
     <div class="flex flex-col h-full p-8 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark transition-transform hover:scale-[1.02]">
         
         <img 
@@ -156,12 +177,12 @@ const createPastEventCard = (event) => {
 };
 
 const renderPastEvents = () => {
-  // Target the specific 'past-events' ID
-  const container = document.getElementById('past-events-container');
-  
-  if (container) {
-    container.innerHTML = pastEventsData.map(event => createPastEventCard(event)).join('');
-  }
+    // Target the specific 'past-events' ID
+    const container = document.getElementById('past-events-container');
+
+    if (container) {
+        container.innerHTML = pastEventsData.map(event => createPastEventCard(event)).join('');
+    }
 };
 
 document.addEventListener('DOMContentLoaded', renderPastEvents);

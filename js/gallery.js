@@ -105,8 +105,8 @@ Five trend-based awards were presented-including the Virtual Entrepreneur Award 
         title: 'World Student Pitch',
         description: `Aiming to become the world's top student pitch competition, Preliminary rounds will be held in 15 locations across Asia in 2025 as students compete for over 10M Yen in prizes!`,
         images: [
-          './assets/images/2025/2025-1.png',
-          './assets/images/2025/2025-2.png',
+          './assets/images/2025/2025-1.jpeg',
+          './assets/images/2025/2025-2.jpeg',
           './assets/images/2025/2025-3.png',
         ]
       }
