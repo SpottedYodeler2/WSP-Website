@@ -149,18 +149,30 @@
 
         <!-- Header -->
         <header
-            class="fixed top-0 left-0 right-0 z-50 bg-background-dark/80 dark:bg-background-dark/80 backdrop-blur-sm">
+            class="fixed top-0 left-0 right-0 z-50 bg-background-dark/80 backdrop-blur-sm">
             <div
                 class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <img
-                        alt="globe icon"
-                        class="inline-block align-baseline"
-                        style="height: 3em; width: 5em;"
-                        src="./assets/WSP.svg" />
+
+                <div class="flex items-center space-x-4">
+                    <button id="menu-btn"
+                        class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
+                    <div class="flex items-center">
+                        <img alt="globe icon"
+                            class="inline-block align-baseline"
+                            style="height: 2.5em; width: auto;"
+                            src="./assets/WSP.svg" />
+                    </div>
                 </div>
-                <nav
-                    class="hidden md:flex items-center space-x-8 justify-start">
+
+                <nav class="hidden md:flex items-center space-x-8">
                     <a class="text-gray-300 hover:text-white transition-colors"
                         href="#about">About WSP</a>
                     <a class="text-gray-300 hover:text-white transition-colors"
@@ -170,28 +182,68 @@
                     <a class="text-gray-300 hover:text-white transition-colors"
                         href="#contact">Contact Us</a>
                 </nav>
-                <div class="flex items-center space-x-4">
+
+                <div class="flex items-center space-x-3 md:space-x-4">
                     <button
-                        class="bg-white/20 text-white px-6 py-2 rounded-full hover:bg-white/30 transition-colors text-sm">
+                        class="bg-white/20 text-white px-4 md:px-6 py-2 rounded-full hover:bg-white/30 transition-colors text-xs md:text-sm whitespace-nowrap">
                         Opening Soon!
                     </button>
-                    <div class="text-right leading-tight">
-                        <!-- By YUME PRO -->
-                        <div class="flex items-center justify-end space-x-4">
-                            <span
-                                class="text-gray-300 text-xs md:text-sm hover:text-white transition-colors">Supported
-                                by
-                            </span>
-                            <img
-                                alt="YUME PRO logo"
-                                style="height: 3em; width: 3.7em;"
-                                src="./assets/YUME_PRO.svg" />
-                        </div>
+                    <div class="flex items-center space-x-2 md:space-x-4">
+                        <span
+                            class="hidden lg:inline text-gray-300 text-xs hover:text-white transition-colors leading-tight">
+                            Supported<br>by
+                        </span>
+                        <img alt="YUME PRO logo"
+                            style="height: 2.5em; width: auto;"
+                            src="./assets/YUME_PRO.svg" />
                     </div>
+                </div>
+            </div>
 
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-background-dark/95 border-t border-white/10 shadow-xl">
+                <div class="flex flex-col space-y-4 px-8 py-8">
+                    <a
+                        class="text-gray-300 hover:text-white text-lg font-medium border-b border-white/5 pb-2"
+                        href="#about">About WSP</a>
+                    <a
+                        class="text-gray-300 hover:text-white text-lg font-medium border-b border-white/5 pb-2"
+                        href="#events">Events</a>
+                    <a
+                        class="text-gray-300 hover:text-white text-lg font-medium border-b border-white/5 pb-2"
+                        href="#howto">How to Join</a>
+                    <a
+                        class="text-gray-300 hover:text-white text-lg font-medium"
+                        href="#contact">Contact Us</a>
                 </div>
             </div>
         </header>
+
+        <script>
+            const btn = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            btn.addEventListener('click', () => {
+                const isHidden = menu.classList.toggle('hidden');
+                
+                // Optional: Change hamburger to an 'X' when open
+                if (!isHidden) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                } else {
+                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                }
+            });
+
+            // Close menu when clicking a link
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                });
+            });
+        </script>
 
         <!-- Top Banner -->
         <section
@@ -623,8 +675,6 @@
                     </div>
                 </div>
 
-
-
                 <div
                     class="mt-10 flex flex-col h-full p-8 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark transition-transform hover:scale-[1.02]">
 
@@ -645,10 +695,12 @@
 
                     <p
                         class="text-subtext-light dark:text-subtext-dark text-lg mb-6 flex-grow">
-                        World’s Largest Student Startup Competition is now in Italy!
+                        World’s Largest Student Startup Competition is now in
+                        Italy!
                     </p>
 
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScGMqgmbL7QqTlr5IjJbNX_Y22O94dsBTmqINmTeiRdz5PPOA/viewform?usp=dialog"
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLScGMqgmbL7QqTlr5IjJbNX_Y22O94dsBTmqINmTeiRdz5PPOA/viewform?usp=dialog"
                         class="text-blue-500 hover:text-blue-600 font-semibold inline-flex items-center mt-auto group transition-colors">
                         Register here now!
                         <span
